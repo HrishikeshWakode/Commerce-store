@@ -11,10 +11,20 @@ import orderRouter from "./routes/orderRoute.js"
 const app = express()
 const port = process.env.PORT || 4000;
 
+// CORS configuration
+const corsOptions = {
+    origin: [
+        "https://main.dklxpsnibbpiw.amplifyapp.com",
+        "http://localhost:5173",
+        "http://localhost:3000",
+        "http://localhost:5174"
+    ],
+    credentials: true
+};
 
 // middlewares
 app.use(express.json())
-app.use(cors())
+app.use(cors(corsOptions))
 
 // db connection
 connectDB()

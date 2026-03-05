@@ -52,7 +52,7 @@ const PlaceOrder = () => {
                 const { order_id, amount, currency, orderId } = response.data;
                 
                 const options = {
-                    key: process.env.REACT_APP_RAZORPAY_KEY_ID || "rzp_test_your_key_id", // Replace with your Razorpay key
+                    key: import.meta.env.VITE_RAZORPAY_KEY_ID || "rzp_test_your_key_id", // Replace with your Razorpay key
                     amount: amount,
                     currency: currency,
                     name: "Tomato Food Delivery",
